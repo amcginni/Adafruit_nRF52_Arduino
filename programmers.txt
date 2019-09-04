@@ -18,7 +18,7 @@ nrfjprog.program.pattern="{program.cmd}" --reset --program "{build.path}/{build.
 # tools.nrfutil.upload.BOOT_SETTING_ADDR=0xFF000
 
 #**********************************************
-# adafruit-nrfutil
+# nrfutil
 #**********************************************
 nrfutil_boot.name=Bootloader DFU for Bluefruit nRF52
 nrfutil_boot.program.tool=bootburn
