@@ -1,4 +1,4 @@
-# Modified Arduino Core for Adafruit Bluefruit nRF52 Boards
+# Arduino Core for Adafruit Bluefruit nRF52 Boards
 
 This repository contains the Arduino BSP for Adafruit Bluefruit nRF52 series:
 
@@ -12,7 +12,21 @@ Following boards are also included but are not officially supported:
 
 ## BSP Installation
 
- 1. Make sure the nrfutil and arm-none-eabi- GNU Compiler Collection binaries are in your $PATH
+There are two methods that you can use to install this BSP. We highly recommend the first option unless you wish to participate in active development of this codebase via Github.
+
+### Recommended: Adafruit nRF52 BSP via the Arduino Board Manager
+
+ 1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12)
+ 2. Start the Arduino IDE
+ 3. Go into Preferences
+ 4. Add https://www.adafruit.com/package_adafruit_index.json as an 'Additional Board Manager URL'
+ 5. Restart the Arduino IDE
+ 6. Open the Boards Manager from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit'
+ 7. Once the BSP is installed, select 'Adafruit Bluefruit nRF52 Feather' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
+
+### Optional (Core Development): Adafruit nRF52 BSP via git
+
+ 1. Install BSP via Board Manager as above to install compiler & tools.
  2. Delete the core folder `nrf52` installed by Board Manager in Adruino15, depending on your OS. It could be
   * macOS  : `~/Library/Arduino15/packages/adafruit/hardware/nrf52`
   * Linux  : `~/.arduino15/packages/adafruit/hardware/nrf52`
@@ -26,9 +40,9 @@ Following boards are also included but are not officially supported:
  6. Restart the Arduino IDE
  7. Once the BSP is installed, select 'Adafruit Bluefruit nRF52 Feather' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
 
-### pc-nrfutil tools
+### Adafruit's nrfutil tools
 
-Contrary to Adafruit's advice, we use Nordic's pc-nrfutil version 0.5.1.  The boards.txt and programmers.txt files have been updated to reflect this change.
+You will need the [adafruit-nrfutil](https://github.com/adafruit/Adafruit_nRF52_nrfutil) version 0.5.3.post10 (derived from Nordic pc-nrfutil) to upload sketch via serial port.  Do not use Nordic's own pc-nrfutil.  Look in the requriements.txt document in the adafruit-nrfutil repository for the Python packages you need, install them through your distribution's package manager or `pip`, and then use the included installation script to install the software package to your computer.
 
 ### Drivers
 
